@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const FETCH_STOCK = 'FETCH_STOCK';
-const STOCK_DETAIL = 'STOCK_DETAIL';
+// const STOCK_DETAIL = 'STOCK_DETAIL';
 const API_URL = 'https://financialmodelingprep.com/api/v3/';
 const API_KEY = 'e164fc0fa90b9832b743d720daa77a82';
 const initialState = [];
