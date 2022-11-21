@@ -11,7 +11,7 @@ const StockList = () => {
   }, [dispatch]);
 
   const state = useSelector((state) => state.stock);
-  
+
   return (
     <section className="stock-list-section">
       {state.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />))}

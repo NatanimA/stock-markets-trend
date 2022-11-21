@@ -1,10 +1,8 @@
-import StockList from './components/StockList';
+import StockPage from './components/StockPage';
 
 function App() {
   return (
-    <div className="App">
-      <StockList />
-    </div>
+    <StockPage />
   );
 }
 
