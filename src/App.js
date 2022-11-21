@@ -1,6 +1,10 @@
+import StockList from './components/StockList';
+
 function App() {
   return (
-    <div className="App" />
+    <div className="App">
+      <StockList />
+    </div>
   );
 }
 
