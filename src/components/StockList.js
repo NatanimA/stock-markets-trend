@@ -7,20 +7,24 @@ import StockItems from './StockItems';
 const StockList = () => {
   const state = useSelector((state) => state.stock.stocksData);
 
-  // const filteredState = useSelector(
-  //   (state) => state.stock.filtered,
-  // );
+  const filteredState = useSelector(
+    (state) => state.stock.filtered,
+  );
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchStock());
-  }, []);
+    if(filteredState.length < 1){
+      dispatch(fetchStock());
+    }
+  }, [dispatch,filteredState.length]);
 
   return (
     <Container>
       <section className="stock-list-section">
-        {state.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />))}
+        {filteredState.length === 0 ? state.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />)):
+          filteredState.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />))
+        }
       </section>
     </Container>
 

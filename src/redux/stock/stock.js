@@ -6,7 +6,7 @@ const COMPANY_STATEMENTS = 'COMPANY_STATEMENTS';
 const STOCK_DETAIL = 'STOCK_DETAIL';
 const RESET_STOCK = 'RESET_STOCK';
 const API_URL = 'https://financialmodelingprep.com/api/v3/';
-const API_KEY = 'e164fc0fa90b9832b743d720daa77a82';
+const API_KEY = 'e528de4fe03aeb75adc32ec89784f643';
 const initialState = {
   stocksData: [],
   details: [],

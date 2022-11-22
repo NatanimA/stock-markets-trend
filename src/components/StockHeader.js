@@ -12,7 +12,7 @@ const StockHeader = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchStock());
-  }, [dispatch]);
+  }, [dispatch,state.length]);
 
   return (
     <section className="header-section-container">
