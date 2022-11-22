@@ -4,6 +4,7 @@ const FETCH_STOCK = 'FETCH_STOCK';
 const FILTER_COMPANY = 'FILTER_COMPANY';
 const COMPANY_STATEMENTS = 'COMPANY_STATEMENTS';
 const STOCK_DETAIL = 'STOCK_DETAIL';
+const RESET_STOCK = 'RESET_STOCK';
 const API_URL = 'https://financialmodelingprep.com/api/v3/';
 const API_KEY = 'e164fc0fa90b9832b743d720daa77a82';
 const initialState = {
@@ -39,8 +40,9 @@ export const fetchStockDetails = (symbol) => async (dispatch) => {
 
 export const fetchCompanyStatements = (symbol) => async (dispatch) => {
   try {
-    const response = axios.get(`${API_URL}income-statement/${symbol}?limit=120&apikey=${API_KEY}`).then((res) => res).catch((err) => err);
+    const response = await axios.get(`${API_URL}income-statement/${symbol}?limit=120&apikey=${API_KEY}`).then((res) => res).catch((err) => err);
     const payload = response.data;
+    console.log('Statement Payload: ', response);
     dispatch({
       type: COMPANY_STATEMENTS,
       payload,
@@ -49,6 +51,10 @@ export const fetchCompanyStatements = (symbol) => async (dispatch) => {
     throw new Error(err);
   }
 };
+
+export const resetStock = () => ({
+  type: RESET_STOCK,
+});
 
 const stockReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -72,6 +78,8 @@ const stockReducer = (state = initialState, { type, payload }) => {
             .toLowerCase().includes(payload.toLowerCase())),
         ],
       };
+    case RESET_STOCK:
+      return { ...state, statement: [], details: [] };
     default:
       return state;
   }

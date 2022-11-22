@@ -28,6 +28,10 @@ code {
   color: #fff;
 }
 
+header {
+  background: #5E716A;
+}
+
 .arrow-right {
   position: absolute;
   top: 0.5rem;

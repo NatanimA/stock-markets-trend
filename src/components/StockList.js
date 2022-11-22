@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
 import { fetchStock } from '../redux/stock/stock';
 import StockItems from './StockItems';
 
@@ -23,7 +23,7 @@ const StockList = () => {
         {state.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />))}
       </section>
     </Container>
-    
+
   );
 };
 
