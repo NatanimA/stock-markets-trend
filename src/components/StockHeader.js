@@ -7,7 +7,7 @@ const { useEffect } = require('react');
 const { useSelector, useDispatch } = require('react-redux');
 
 const StockHeader = () => {
-  const state = useSelector((state) => state.stock);
+  const state = useSelector((state) => state.stock.stocksData);
   const active = state.slice(0, 4);
   const dispatch = useDispatch();
   useEffect(() => {

@@ -1,8 +1,12 @@
 import StockPage from './components/StockPage';
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
-    <StockPage />
+    <Routes>
+      <Route exact path='/' element={<StockPage />} />
+      
+    </Routes>
   );
 }
 
