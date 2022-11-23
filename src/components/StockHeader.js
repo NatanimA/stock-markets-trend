@@ -1,7 +1,6 @@
 import { Carousel, Card, Container } from 'react-bootstrap';
 import { FaLongArrowAltDown, FaLongArrowAltUp } from 'react-icons/fa';
 import { fetchStock } from '../redux/stock/stock';
-import Chart from '../assets/images/chart.jpg';
 
 const { useEffect } = require('react');
 const { useSelector, useDispatch } = require('react-redux');
@@ -12,7 +11,7 @@ const StockHeader = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchStock());
-  }, [dispatch,state.length]);
+  }, [dispatch, state.length]);
 
   return (
     <section className="header-section-container">
@@ -21,31 +20,37 @@ const StockHeader = () => {
           {active.map(
             ({
               symbol, change, name, price, changesPercentage,
-            }) => (
-              <Carousel.Item key={symbol}>
-                <Card className="bg-dark text-white">
-                  <Card.Img src={require(`../assets/company/${symbol}.png`)} alt="Card image" />
-                  <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
-                    <Card.Title className='company-name-title'>{name}</Card.Title>
-                    <Card.Text>
-                      <span>
-                        <strong>Price:</strong>
-                        {' '}
-                        {`${price}$`}
-                      </span>
-                      <span>
-                        <FaLongArrowAltUp className="text-success" />
-                        {changesPercentage}
-                      </span>
-                      <span>
-                        <FaLongArrowAltDown className="text-danger" />
-                        {change}
-                      </span>
-                    </Card.Text>
-                  </Card.ImgOverlay>
-                </Card>
-              </Carousel.Item>
-            ),
+            }) => {
+              // eslint-disable-next-line
+              const imgBG = require(`../assets/company/${symbol}.png`);
+              return (
+                <Carousel.Item key={`${symbol}link`}>
+                  <Card className="bg-dark text-white">
+                    {/* eslint-disable-next-line */}
+                    <Card.Img src={imgBG} alt="Card image" />
+                    <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
+                      <Card.Title className="company-name-title">{name}</Card.Title>
+                      <Card.Text>
+                        <span>
+                          <strong>Price:</strong>
+                          {' '}
+                          {`${price}$`}
+                        </span>
+                        <span>
+                          <FaLongArrowAltUp className="text-success" />
+                          {changesPercentage}
+                        </span>
+                        <span>
+                          <FaLongArrowAltDown className="text-danger" />
+                          {change}
+                        </span>
+                      </Card.Text>
+                    </Card.ImgOverlay>
+                  </Card>
+                </Carousel.Item>
+              );
+            },
+
           )}
         </Carousel>
       </Container>

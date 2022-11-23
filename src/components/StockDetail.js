@@ -10,13 +10,11 @@ const StockDetail = () => {
   const dispatch = useDispatch();
   const stockDetailState = useSelector((state) => state.stock.details);
   const companyStatementState = useSelector((state) => state.stock.statement);
-  console.log('Detail: ', stockDetailState);
-  console.log('Statement: ', companyStatementState);
   const { symbol } = useParams();
   useEffect(() => {
     dispatch(fetchCompanyStatements(symbol));
     dispatch(fetchStockDetails(symbol));
-  }, [symbol]);
+  }, [dispatch, symbol]);
   const clickHandler = () => {
     dispatch(resetStock());
   };
@@ -130,7 +128,7 @@ const StockDetail = () => {
                     calendarYear,
                     operatingIncomeRatio,
                   }, index) => (
-                    <tr key={symbol + index}>
+                    <tr key={`${symbol}link`}>
                       <td>{calendarYear}</td>
                       <td
                         className="statement-data"

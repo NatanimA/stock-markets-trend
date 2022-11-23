@@ -19,13 +19,12 @@ export const fetchStock = () => async (dispatch) => {
     (res) => res,
   ).catch((err) => err);
   const payload = response.data;
-  
+
   dispatch({
     type: FETCH_STOCK,
     payload,
   });
 };
-
 
 export const fetchStockDetails = (symbol) => async (dispatch) => {
   try {
@@ -44,7 +43,6 @@ export const fetchCompanyStatements = (symbol) => async (dispatch) => {
   try {
     const response = await axios.get(`${API_URL}income-statement/${symbol}?limit=20&apikey=${API_KEY}`).then((res) => res).catch((err) => err);
     const payload = response.data;
-    console.log('Statement Payload: ', response);
     dispatch({
       type: COMPANY_STATEMENTS,
       payload,

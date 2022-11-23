@@ -3,17 +3,17 @@ import { FaLongArrowAltDown, FaLongArrowAltUp } from 'react-icons/fa';
 import { FiArrowRightCircle } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Chart from '../assets/images/chart.jpg';
 
 const StockItems = ({ stock }) => {
   const {
     symbol, name, price, change, changesPercentage,
   } = stock;
-  console.log("Symbol: ",stock)
+  // eslint-disable-next-line
+  const imgBG = require(`../assets/company/${symbol}.png`);
   return (
     <Card className="card-container">
       <Link to={`details/${symbol}`} key={`${symbol}link`} className="text-white">
-        <Card.Img variant="top" src={require(`../assets/company/${symbol}.png`)} />
+        <Card.Img variant="top" src={imgBG} />
         <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
           <Card.Title className="company-name-title">{name}</Card.Title>
           <Card.Text>

@@ -15,18 +15,23 @@ const StockList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(filteredState.length < 1){
+    if (filteredState.length < 1) {
       dispatch(fetchStock());
     }
-  }, [dispatch,filteredState.length]);
+  }, [dispatch, filteredState.length]);
 
   return (
     <Container>
       <Search />
       <section className="stock-list-section">
-        {filteredState.length === 0 ? state.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />)):
-          filteredState.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />))
-        }
+        {filteredState.length === 0
+          ? state.map((stockItem) => (<StockItems stock={stockItem} key={stockItem.symbol} />))
+          : filteredState.map((stockItem) => (
+            <StockItems
+              stock={stockItem}
+              key={stockItem.symbol}
+            />
+          ))}
       </section>
     </Container>
 
