@@ -7,7 +7,7 @@ const NavBar = () => (
   <header>
     <Container className="d-flex flex-sm-row justify-content-between">
       <h2>
-        <Navbar.Brand href="#">Stock Market Trends</Navbar.Brand>
+        <Navbar.Brand className="brand-name" href="#">Wall Street</Navbar.Brand>
       </h2>
       <div className="justify-content-end text-white mx-4 flex-wrap">
         <a href="#search" className="text-white mx-3">

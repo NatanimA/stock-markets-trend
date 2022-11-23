@@ -21,7 +21,7 @@ const StockList = () => {
   }, [dispatch, filteredState.length]);
 
   return (
-    <Container>
+    <Container className="stock-list-container">
       <Search />
       <section className="stock-list-section">
         {filteredState.length === 0

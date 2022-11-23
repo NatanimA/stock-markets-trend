@@ -15,7 +15,7 @@ const StockHeader = () => {
 
   return (
     <section className="header-section-container">
-      <Container>
+      <Container className="header-container">
         <Carousel className="mt-3 position-relative">
           {active.map(
             ({
@@ -25,10 +25,10 @@ const StockHeader = () => {
               const imgBG = require(`../assets/company/${symbol}.png`);
               return (
                 <Carousel.Item key={`${symbol}link`}>
-                  <Card className="bg-dark text-white">
+                  <Card className="text-white lg">
                     {/* eslint-disable-next-line */}
-                    <Card.Img src={imgBG} alt="Card image" />
-                    <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
+                      <Card.Img src={imgBG} alt="Card image" />
+                    <Card.ImgOverlay className="item-container text-center align-center d-flex flex-column  justify-content-center">
                       <Card.Title className="company-name-title">{name}</Card.Title>
                       <Card.Text>
                         <span>
@@ -48,6 +48,7 @@ const StockHeader = () => {
                     </Card.ImgOverlay>
                   </Card>
                 </Carousel.Item>
+
               );
             },
 

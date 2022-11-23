@@ -14,8 +14,8 @@ const StockItems = ({ stock }) => {
     <Card className="card-container">
       <Link to={`details/${symbol}`} key={`${symbol}link`} className="text-white">
         <Card.Img variant="top" src={imgBG} />
-        <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
-          <Card.Title className="company-name-title">{name}</Card.Title>
+        <Card.ImgOverlay className="item-container text-center align-center d-flex flex-column  justify-content-center">
+          <Card.Title className="bg-dark company-name-title">{name}</Card.Title>
           <Card.Text>
             <span className="text-white p-2 text-center">
               {symbol}
