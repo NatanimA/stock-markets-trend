@@ -14,26 +14,34 @@ const initialState = {
   filtered: [],
 };
 
+export const actionFetchStock = (payload) => ({
+  type: FETCH_STOCK,
+  payload,
+});
+
+export const actionStockDetail = (payload) => ({
+  type: STOCK_DETAIL,
+  payload,
+});
+
+export const actionCompanyStatemnts = (payload) => ({
+  type: COMPANY_STATEMENTS,
+  payload,
+});
+
 export const fetchStock = () => async (dispatch) => {
   const response = await axios.get(`${API_URL}stock_market/actives?limit=120&apikey=${API_KEY}`).then(
     (res) => res,
   ).catch((err) => err);
   const payload = response.data;
-
-  dispatch({
-    type: FETCH_STOCK,
-    payload,
-  });
+  dispatch(actionFetchStock(payload));
 };
 
 export const fetchStockDetails = (symbol) => async (dispatch) => {
   try {
     const response = await axios.get(`${API_URL}/profile/${symbol}?apikey=${API_KEY}`).then((res) => res).catch((res) => res);
     const payload = response.data;
-    dispatch({
-      type: STOCK_DETAIL,
-      payload,
-    });
+    dispatch(actionStockDetail(payload));
   } catch (err) {
     throw new Error(err);
   }
@@ -43,10 +51,7 @@ export const fetchCompanyStatements = (symbol) => async (dispatch) => {
   try {
     const response = await axios.get(`${API_URL}income-statement/${symbol}?limit=20&apikey=${API_KEY}`).then((res) => res).catch((err) => err);
     const payload = response.data;
-    dispatch({
-      type: COMPANY_STATEMENTS,
-      payload,
-    });
+    dispatch(actionCompanyStatemnts(payload));
   } catch (err) {
     throw new Error(err);
   }

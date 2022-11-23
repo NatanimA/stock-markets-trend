@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useParams, Link } from 'react-router-dom';
 import { Container, Navbar, Table } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
@@ -128,7 +129,7 @@ const StockDetail = () => {
                     calendarYear,
                     operatingIncomeRatio,
                   }, index) => (
-                    <tr key={`${symbol}link`}>
+                    <tr key={`${symbol}+${uuidv4()}`}>
                       <td>{calendarYear}</td>
                       <td
                         className="statement-data"
