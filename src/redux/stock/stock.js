@@ -6,7 +6,7 @@ const COMPANY_STATEMENTS = 'COMPANY_STATEMENTS';
 const STOCK_DETAIL = 'STOCK_DETAIL';
 const RESET_STOCK = 'RESET_STOCK';
 const API_URL = 'https://financialmodelingprep.com/api/v3/';
-const API_KEY = 'e528de4fe03aeb75adc32ec89784f643';
+const API_KEY = '6202c61cfb5d70102c1019f58a4dac90';
 const initialState = {
   stocksData: [],
   details: [],
@@ -15,15 +15,17 @@ const initialState = {
 };
 
 export const fetchStock = () => async (dispatch) => {
-  const response = await axios.get(`${API_URL}stock_market/actives?limit=20&apikey=${API_KEY}`).then(
+  const response = await axios.get(`${API_URL}stock_market/actives?limit=120&apikey=${API_KEY}`).then(
     (res) => res,
   ).catch((err) => err);
   const payload = response.data;
+  
   dispatch({
     type: FETCH_STOCK,
     payload,
   });
 };
+
 
 export const fetchStockDetails = (symbol) => async (dispatch) => {
   try {
@@ -40,7 +42,7 @@ export const fetchStockDetails = (symbol) => async (dispatch) => {
 
 export const fetchCompanyStatements = (symbol) => async (dispatch) => {
   try {
-    const response = await axios.get(`${API_URL}income-statement/${symbol}?limit=120&apikey=${API_KEY}`).then((res) => res).catch((err) => err);
+    const response = await axios.get(`${API_URL}income-statement/${symbol}?limit=20&apikey=${API_KEY}`).then((res) => res).catch((err) => err);
     const payload = response.data;
     console.log('Statement Payload: ', response);
     dispatch({
@@ -54,6 +56,11 @@ export const fetchCompanyStatements = (symbol) => async (dispatch) => {
 
 export const resetStock = () => ({
   type: RESET_STOCK,
+});
+
+export const filterCompany = (payload) => ({
+  type: FILTER_COMPANY,
+  payload,
 });
 
 const stockReducer = (state = initialState, { type, payload }) => {

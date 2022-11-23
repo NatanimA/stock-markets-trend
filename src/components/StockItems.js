@@ -9,12 +9,13 @@ const StockItems = ({ stock }) => {
   const {
     symbol, name, price, change, changesPercentage,
   } = stock;
+  console.log("Symbol: ",stock)
   return (
     <Card className="card-container">
       <Link to={`details/${symbol}`} key={`${symbol}link`} className="text-white">
-        <Card.Img variant="top" src={Chart} />
+        <Card.Img variant="top" src={require(`../assets/company/${symbol}.png`)} />
         <Card.ImgOverlay className="text-center align-center d-flex flex-column  justify-content-center">
-          <Card.Title className="stock-name">{name}</Card.Title>
+          <Card.Title className="company-name-title">{name}</Card.Title>
           <Card.Text>
             <span className=" bg-dark text-white p-2 text-center">
               {symbol}
