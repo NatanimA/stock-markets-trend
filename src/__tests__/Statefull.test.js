@@ -4,7 +4,6 @@ import StockPage from '../components/StockPage';
 import store from '../redux/configureStore';
 import StockList from '../components/StockList';
 import StockDetail from '../components/StockDetail';
-import StockItems from '../components/StockItems';
 import StockHeader from '../components/StockHeader';
 
 describe('Should render statefull components', () => {
@@ -28,14 +27,6 @@ describe('Should render statefull components', () => {
     <Provider store={store}>
       <BrowserRouter>
         <StockDetail />
-      </BrowserRouter>
-    </Provider>;
-  });
-
-  it('Should render Items, ', () => {
-    <Provider store={store}>
-      <BrowserRouter>
-        <StockItems />
       </BrowserRouter>
     </Provider>;
   });
