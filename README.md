@@ -54,13 +54,17 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Stock Trends (Wall Street) <a name="about-project"></a>
 
 > This project will help you to get a real time updates on Financial status of comapanies which are well known, and It will help you see their financial statement and the overall description of the company, API Documentation is found on ```https://site.financialmodelingprep.com/developer/docs/```.
 
-**[your_project__name]** is Stock Markets Trend(Wall Street)
+**Stock Markets Trend(Wall Street)**
 
-![Alt text](../../../../../../../C:/Users/user/Documents/Experiments%20And%20Training%20Lab/Microverse-Projects/stock-markets-trend/README.mdC:/Users/user/Documents/Experiments%20And%20Training%20Lab/Microverse-Projects/stock-markets-trend/src/assets/images/de.JPGC:/Users/user/Documents/Experiments%20And%20Training%20Lab/Microverse-Projects/stock-markets-trend/src/assets/images/list.JPG)
+![detail image](../../../../../../../C:/Users/user/Documents/Experiments%20And%20Training%20Lab/Microverse-Projects/stock-markets-trend/src/assets/images/list.JPG)
+
+![List Image](../../../../../../../C:/Users/user/Documents/Experiments%20And%20Training%20Lab/Microverse-Projects/stock-markets-trend/src/assets/images/list.JPG)
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -88,7 +92,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://stocks-natanim.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,7 +100,8 @@ After you're finished please remove all the comments and instructions!
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> This project will help you to get a real time updates on Financial status of comapanies which are well known, and It will help you see their financial statement and the overall description of the company, API Documentation is found on ```https://site.financialmodelingprep.com/developer/docs/```.
+> This project will help you to get a real time updates on Financial status of comapanies which are well known, and It will help you see their financial statement and the overall description of the company, API Documentation is found on ```https://site.financialmodelingprep.com/developer/docs/```,
+Original design idea by Nelson Sakwa on Behance.
 
 To get a local copy up and running, follow these steps.
 
@@ -215,9 +220,7 @@ If you like this project please don't forget to give it a star...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+> Original design idea by Nelson Sakwa on Behance.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
