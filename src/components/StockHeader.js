@@ -25,7 +25,7 @@ const StockHeader = () => {
               <Carousel.Item key={symbol}>
                 <Card className="bg-dark text-white">
                   <Card.Img src={require(`../assets/company/${symbol}.png`)} alt="Card image" />
-                  <Card.ImgOverlay className="text-center align-center d-flex flex-column  justify-content-center">
+                  <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
                     <Card.Title className='company-name-title'>{name}</Card.Title>
                     <Card.Text>
                       <span>

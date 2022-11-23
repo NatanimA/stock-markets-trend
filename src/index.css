@@ -59,6 +59,8 @@ header {
 }
 
 .company-name-title {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
   color: green;
 }
 
@@ -82,4 +84,12 @@ footer {
   margin-top: 1rem;
   display: flex;
   justify-content: space-around;
+}
+
+.bg-dark {
+  opacity: 0.8;
+}
+
+.company-name-change {
+  color: red;
 }

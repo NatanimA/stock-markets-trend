@@ -14,10 +14,10 @@ const StockItems = ({ stock }) => {
     <Card className="card-container">
       <Link to={`details/${symbol}`} key={`${symbol}link`} className="text-white">
         <Card.Img variant="top" src={require(`../assets/company/${symbol}.png`)} />
-        <Card.ImgOverlay className="text-center align-center d-flex flex-column  justify-content-center">
+        <Card.ImgOverlay className="bg-dark text-center align-center d-flex flex-column  justify-content-center">
           <Card.Title className="company-name-title">{name}</Card.Title>
           <Card.Text>
-            <span className=" bg-dark text-white p-2 text-center">
+            <span className="text-white p-2 text-center">
               {symbol}
             </span>
           </Card.Text>
@@ -27,11 +27,11 @@ const StockItems = ({ stock }) => {
             {' '}
             {`${price}$`}
           </span>
-          <span>
+          <span className="company-name-title">
             <FaLongArrowAltUp className="text-success" />
             {changesPercentage}
           </span>
-          <span>
+          <span className="company-name-change">
             <FaLongArrowAltDown className="text-danger" />
             {change}
           </span>
